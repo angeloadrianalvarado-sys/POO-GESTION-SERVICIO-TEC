@@ -2,6 +2,7 @@
 package thera.gestion.servicio.tec;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class RegistroSeguimiento {
     private LocalDateTime fechaHora;
@@ -15,6 +16,9 @@ public class RegistroSeguimiento {
         this.responsable = responsable;
     }
     
-    
+    public String getTextoFormateado() {
+        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+        return "[" + fechaHora.format(fmt) + "] [" + estado + "] (" + responsable + "): " + observacion;
+    }
     
 }
