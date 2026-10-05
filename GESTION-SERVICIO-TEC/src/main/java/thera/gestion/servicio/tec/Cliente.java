@@ -1,13 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package thera.gestion.servicio.tec;
 
-/**
- *
- * @author User
- */
-public class Cliente {
+public class Cliente extends Persona {
+    private String direccion;
+    public Cliente (String id, String nombre, String telefono, String email, String direccion){
+        super (id, nombre, telefono, email);
+        this.direccion = direccion;
+        
+    }
+    
+    public String getDireccion(){
+        return direccion;
+        
+    }
     
 }

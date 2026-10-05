@@ -1,13 +1,31 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package thera.gestion.servicio.tec;
 
-/**
- *
- * @author User
- */
 public class Repuesto {
+    private String codigo, nombre;
+    private double precioUnitario;
+    private int cantidad;
     
+    public Repuesto(String codigo, String nombre, double precioUnitario, int cantidad){
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.precioUnitario = precioUnitario;
+        this.cantidad = cantidad;
+    }
+    
+    public String getCodigo(){
+        return codigo;
+    }
+    
+    public String getNombre(){
+        return nombre;
+    }
+    
+    public double getPrecioUnitario(){
+        return precioUnitario;
+    }
+    
+    public int getCantidad(){
+        return cantidad;
+    }
 }

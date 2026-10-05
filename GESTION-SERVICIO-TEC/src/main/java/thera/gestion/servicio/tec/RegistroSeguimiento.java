@@ -1,13 +1,20 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package thera.gestion.servicio.tec;
 
-/**
- *
- * @author User
- */
+import java.time.LocalDateTime;
+
 public class RegistroSeguimiento {
+    private LocalDateTime fechaHora;
+    private EstadoOrden estado;
+    private String observacion, responsable;
+    
+    public RegistroSeguimiento (EstadoOrden estado, String observacion, String responsable){
+        this.fechaHora = LocalDateTime.now();
+        this.estado = estado;
+        this.observacion = observacion;
+        this.responsable = responsable;
+    }
+    
+    
     
 }

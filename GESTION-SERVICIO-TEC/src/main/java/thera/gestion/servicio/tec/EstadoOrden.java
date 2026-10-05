@@ -1,13 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package thera.gestion.servicio.tec;
 
-/**
- *
- * @author User
- */
-public class EstadoOrden {
-    
+enum EstadoOrden {
+    RECIBIDO,
+    EN_DIAGNOSTICO,
+    ESPERA_REPUESTOS,
+    EN_REPARACION,
+    LISTO_ENTREGA,
+    ENTREGADO,
+    CANCELADO
 }
