@@ -8,6 +8,4 @@ public class PortalCRM {
         this.gestor = gestor;
     }
     
-    //Este servira para darle acceso al cliente y el pueda hacer seguimiento a su equipo...
-    //Por implementar....
 }
