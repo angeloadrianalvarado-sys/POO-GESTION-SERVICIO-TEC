@@ -1,19 +1,16 @@
 
 package thera.gestion.servicio.tec;
 
-public class OrdenServicio {
-    private String codigo, fallaReportada, diagnostico;
+public class OrdenServicio  extends Cambios{
+    private String codigo, fallaReportada;
     private Cliente cliente;
     private Equipo equipo;
     private Tecnico tecnicoAsignado;
-    private EstadoOrden estadoActual;
-    private double costoManoObra;
     private Repuesto[] repuesto;
     private int contadorRepuestos;
-    private RegistroSeguimiento[] historial;
-    private int contadorHistorial;
     
     public OrdenServicio(String codigo, Cliente cliente, Equipo equipo, String fallaReportada){
+        super();
         this.codigo = codigo;
         this.cliente = cliente;
         this.equipo = equipo;
@@ -33,17 +30,6 @@ public class OrdenServicio {
         cambiarEstado(EstadoOrden.EN_DIAGNOSTICO, "Tecnico Asignado:"+tecnico.getNombre(), usuario);
     }
     
-    public void registrarDiagnostico(String diagnostico, double costoManoObra, String usuario){
-        this.diagnostico = diagnostico;
-        this.costoManoObra = costoManoObra;
-        agregarHistorial(this.estadoActual, "Diagnostico: "+diagnostico, usuario);
-    }
-    
-    public void cambiarEstado(EstadoOrden nuevoEstado, String motivo, String usuario){
-        this.estadoActual = nuevoEstado;
-        agregarHistorial(nuevoEstado, motivo, usuario);
-    }
-    
     public boolean agregarRepuesto(Repuesto r){
         if (contadorRepuestos < repuesto.length){
             repuesto[contadorRepuestos] = r;
@@ -52,13 +38,6 @@ public class OrdenServicio {
         }
         System.out.println("No se pueden agregar mas repuestos. Arreglo lleno");
         return false;
-    }
-    
-    public void agregarHistorial(EstadoOrden estado, String detalle, String usuario){
-        if (contadorHistorial < historial.length){
-            historial[contadorHistorial] = new RegistroSeguimiento(estado, detalle, usuario);
-            contadorHistorial++;
-        }
     }
     
     public double calcularTotal(){

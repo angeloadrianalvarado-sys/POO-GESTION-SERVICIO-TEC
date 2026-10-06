@@ -32,4 +32,14 @@ public class Repuesto {
     public double getSubTotal(){
         return cantidad*precioUnitario;
     }
+    
+    public void aumentarStock(int cantidad) {
+        this.cantidad += cantidad;
+    }
+    
+    public void reducirStock(int cantidad) {
+        if(cantidad<this.cantidad){
+            this.cantidad -= cantidad;
+        }
+    }
 }

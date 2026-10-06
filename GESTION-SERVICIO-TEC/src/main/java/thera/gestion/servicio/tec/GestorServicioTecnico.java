@@ -34,6 +34,10 @@ public class GestorServicioTecnico {
         return null;
     }
     
+    public OrdenServicio[] getListaOrdenes(){
+        return listaOrdenes;
+    }
+    
     public int getCantidadOrdenes(){
         return cantidadOrdenes;
     }
