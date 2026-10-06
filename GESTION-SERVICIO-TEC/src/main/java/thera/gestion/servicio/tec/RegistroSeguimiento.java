@@ -16,9 +16,5 @@ public class RegistroSeguimiento {
         this.responsable = responsable;
     }
     
-    public String getTextoFormateado() {
-        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
-        return "[" + fechaHora.format(fmt) + "] [" + estado + "] (" + responsable + "): " + observacion;
-    }
     
 }
